@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class linearInterpolation : MonoBehaviour
 {
-    public Vector2 startPosition;
-    public Vector2 endPosition;
+    public Transform start;
+    public Transform end;
     public float t = 0;
 
 
@@ -16,6 +16,12 @@ public class linearInterpolation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.Lerp(startPosition, endPosition, t);
+        t += Time.deltaTime * 2;
+        if(t > 1)
+        {
+            t = 0;
+        }
+
+        transform.position = Vector2.Lerp(start.position, end.position, t);
     }
 }
