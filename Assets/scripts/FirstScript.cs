@@ -14,10 +14,11 @@ public class FirstScript : MonoBehaviour
     void Update()
     {
         Vector2 newPos = transform.position;
-        newPos.x += speed; 
+        newPos.x += speed * Time.deltaTime; 
         transform.position = newPos;
 
         Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
         if (screenPos.x < -10 || screenPos.x > Screen.width) 
         {
             speed = speed * -1;
