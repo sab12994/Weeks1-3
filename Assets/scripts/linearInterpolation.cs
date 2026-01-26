@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class linearInterpolation : MonoBehaviour
 {
-    public Transform start;
-    public Transform end;
-    public float t = 0;
+    public Transform start; //starting position of the star
+    public Transform end; //ending position 
+    public float t = 0; 
     public AnimationCurve curve;
 
 
@@ -17,9 +17,13 @@ public class linearInterpolation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        t += Time.deltaTime * 2;
-        if(t > 1)
+
+        //made t become bigger with time 
+        t += Time.deltaTime;
+
+        if(t > 5)
         {
+            //when star reaches its end position it starts from the beginning
             t = 0;
         }
 
