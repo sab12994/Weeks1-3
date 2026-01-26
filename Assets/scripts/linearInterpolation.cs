@@ -23,6 +23,7 @@ public class linearInterpolation : MonoBehaviour
 
         if(t > 5)
         {
+            //made it start from the beginning after it reaches the end position
             t = 0;
         }
 
